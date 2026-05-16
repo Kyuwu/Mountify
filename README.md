@@ -3,10 +3,7 @@
 
   # Mountify
 
-  **Spotify, in sync with your mount.**
-
-  No more alt-tabbing to change your music mid-ride. No more missing the beat when you want to change your jam mid-pull.
-  Mountify ties your Spotify playback to your mount state — it handles everything automatically.
+  Spotify, in sync with your mount. No more alt-tabbing to skip a track mid-ride or changing your jam when you're about to pull.
 
 </div>
 
@@ -14,77 +11,77 @@
 
 ## What it does
 
-When you **mount**, Mountify can:
-- Resume Spotify playback (or switch to a specific playlist)
-- Mute in-game BGM and ambient sounds so your music comes through cleanly
-- Fade volume back up to your preferred riding level
-- Skip to the next track or enable shuffle — every ride starts fresh
+Mount up → Spotify plays. Dismount → Spotify pauses (or dims). That's the core of it.
 
-When you **dismount**, Mountify can:
-- Dim Spotify volume instead of pausing (music keeps playing, just quieter)
-- Pause playback entirely
-- Restore game audio after a short delay so the dismount fanfare gets to play
-- Print the current track or a paused notice to chat
+On top of that you get BGM muting so game music doesn't bleed through, a live volume slider inside the plugin window, per-playlist switching on mount, and a bunch of toggles to make it behave exactly how you want.
 
-The live volume slider in the plugin window means you never need to open Spotify just to nudge the volume.
+**On mount:**
+- Resume Spotify (or switch to a specific playlist)
+- Mute in-game BGM / ambient sounds
+- Fade volume up to your riding level
+- Skip to next track, enable shuffle, wait a few seconds first — all optional
 
----
-
-## Features
-
-| Feature | Details |
-|---|---|
-| Auto-resume on mount | Resumes from where you left off, or switches to a configured playlist URI |
-| Auto-pause / dim on dismount | Pause, or just lower the volume and keep playing |
-| Fade transitions | Smooth volume ramps between mounted and dismounted levels |
-| BGM & ambient mute | Cuts in-game music while mounted so Spotify sounds clean |
-| Smart resume | Only resumes if Spotify was already playing when you last dismounted |
-| Skip / shuffle on mount | Fresh track every ride |
-| Live volume slider | Control Spotify volume right inside the plugin window |
-| Mount delay | Wait a few seconds after mounting before music kicks in (hear the fanfare first) |
-| Configurable poll interval | Balance responsiveness vs. API calls |
-| Auto-disable rules | Combat, PvP, duties, cutscenes, crafting — Mountify stands down automatically |
-| Chat notifications | Print track name or paused notice to /echo |
-| `/mf` command | Full playback control from the chat box — no window needed |
+**On dismount:**
+- Pause, or just dim the volume and keep it playing
+- Restore game audio after a delay so the dismount fanfare gets to play
+- Print the current track to chat if you want
 
 ---
 
-## Setup
+## Install
 
-1. Go to [developer.spotify.com](https://developer.spotify.com) → Dashboard → **Create app**
-2. Add `http://127.0.0.1:5004/callback` as a Redirect URI (use `127.0.0.1`, not `localhost`)
-3. Copy your **Client ID**
-4. Open Mountify in-game (`/mountify` or `/mf`), paste the Client ID, and click **Connect**
-5. Log in through the browser that opens — done
+1. Open Dalamud settings → **Experimental** → paste this URL under **Custom Plugin Repositories:**
+   ```
+   https://raw.githubusercontent.com/Kyuwu/Mountify/main/repo.json
+   ```
+2. Click **Save & Close**, then search for **Mountify** in the plugin installer and install it.
 
-Credentials are saved and restored automatically on every plugin reload. No need to re-auth.
+---
+
+## Spotify Setup
+
+One-time setup the first time you use it:
+
+1. Go to [developer.spotify.com](https://developer.spotify.com) → Dashboard → **Create app** (any name is fine)
+2. In the app settings, add this as a Redirect URI and hit Save:
+   ```
+   http://127.0.0.1:5004/callback
+   ```
+   (use `127.0.0.1` — not `localhost`)
+3. Copy your **Client ID** from the app overview
+4. Open Mountify in-game (`/mountify` or `/mf`), paste the Client ID, click **Connect**, and log in through the browser
+
+Your credentials are saved and restored on every reload. You won't need to do this again.
 
 ---
 
 ## Commands
 
-| Command | Action |
+| Command | What it does |
 |---|---|
 | `/mf` | Open / close the window |
-| `/mf next` | Skip to next track |
-| `/mf prev` | Skip to previous track |
+| `/mf next` | Next track |
+| `/mf prev` | Previous track |
 | `/mf pause` | Pause |
 | `/mf play` | Resume |
 | `/mf toggle` | Toggle play/pause |
-| `/mf vol <0-100>` | Set Spotify volume |
+| `/mf vol <0-100>` | Set volume |
 | `/mf track` | Print current track to chat |
 | `/mf enable` / `/mf disable` | Toggle Mountify on or off |
-| `/mf help` | List all subcommands |
+| `/mf help` | Show all subcommands |
 
 ---
 
 ## Requirements
 
-- [Dalamud](https://github.com/goatcorp/Dalamud) plugin framework
-- A Spotify account (free or Premium — volume control requires Spotify Premium)
+- Dalamud plugin framework
+- Spotify account — volume control requires Premium
 - Windows
 
+---
+
 ## Credits
+
 - [Lightless](https://git.lightless-sync.org) theme made by abel <3
 - Built on the [Dalamud](https://github.com/goatcorp/Dalamud) plugin framework
 - Spotify integration via [SpotifyAPI-NET](https://github.com/JohnnyCrazy/SpotifyAPI-NET)
