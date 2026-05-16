@@ -1,0 +1,17 @@
+[
+  {
+    "Author": "Choco",
+    "Name": "Mountify",
+    "Punchline": "Plays Spotify when you mount up.",
+    "Description": "Automatically mutes game BGM and starts Spotify playback when you mount your mount. Restores BGM and pauses Spotify when you dismount.",
+    "InternalName": "Mountify",
+    "AssemblyVersion": "1.0.0.0",
+    "RepoUrl": "https://github.com/Kyuwu/Mountify",
+    "IconUrl": "https://raw.githubusercontent.com/Kyuwu/Mountify/main/Mountify/images/icon.png",
+    "ApplicableVersion": "any",
+    "Tags": ["spotify", "music", "mount", "bgm", "chocobo"],
+    "DownloadLinkInstall": "https://github.com/Kyuwu/Mountify/releases/latest/download/latest.zip",
+    "DownloadLinkTesting": "https://github.com/Kyuwu/Mountify/releases/latest/download/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/Kyuwu/Mountify/releases/latest/download/latest.zip"
+  }
+]

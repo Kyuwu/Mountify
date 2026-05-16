@@ -7,8 +7,8 @@
 *.obj
 *.elf
 
-SpotifyMount/bin
-SpotifyMount/obj
+Mountify/bin
+Mountify/obj
 
 # Linker output
 *.ilk
